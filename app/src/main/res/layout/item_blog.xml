@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/normal_100"
+    android:layout_marginEnd="@dimen/normal_100"
+    android:layout_marginBottom="@dimen/normal_100"
+    app:cardCornerRadius="@dimen/normal_100">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/normal_100">
+
+        <TextView
+            android:id="@+id/tv_blog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="How Handle time when Work from home" />
+
+        <TextView
+            android:id="@+id/tv_created_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="26 February 2022" />
+
+        <ImageView
+            android:id="@+id/img_blog"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:src="@color/teal_700" />
+
+        <TextView
+            android:id="@+id/tv_blog_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lines="2"
+            tools:text="Working from home every day may have felt like a novelty six months ago, but for many of us, we’re in it for the long-haul now. Tech companies from Microsoft to Fujitsu are now giving employees the option to work from home permanently." />
+
+        <TextView
+            android:id="@+id/tv_blog_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="tag: work, wfh, pandemic" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.cardview.widget.CardView>
