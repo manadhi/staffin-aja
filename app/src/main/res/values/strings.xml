@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Staffin Aja</string>
 
-<!--    <string name="candidate_age">%1$d years old</string>-->
+    <string name="candidate_age">%1$d years old</string>
 </resources>

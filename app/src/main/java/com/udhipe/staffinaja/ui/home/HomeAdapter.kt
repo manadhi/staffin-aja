@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.udhipe.staffinaja.R
 import com.udhipe.staffinaja.databinding.ItemBlogBinding
 import com.udhipe.staffinaja.databinding.ItemCandidateBinding
 import com.udhipe.staffinaja.ui.util.GlideManager
@@ -35,7 +36,9 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
                 GlideManager.loadImageResource(itemView.context, item.image, imgCandidate)
                 tvCandidateName.text = item.name
                 tvCandidateGender.text = item.gender
-                tvCandidateAge.text = "" + item.age
+                tvCandidateAge.text = context.resources.getString(
+                    R.string.candidate_age, item.age
+                )
 
                 if (item.expired) {
                     tvCandidateExpired.visibility = View.VISIBLE
