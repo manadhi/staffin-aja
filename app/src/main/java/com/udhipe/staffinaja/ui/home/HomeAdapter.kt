@@ -12,13 +12,19 @@ import com.udhipe.staffinaja.databinding.ItemCandidateBinding
 import com.udhipe.staffinaja.ui.util.GlideManager
 import java.lang.IllegalArgumentException
 
-class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
+class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
+    RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     companion object {
-        private const val TYPE_CANDIDATE = 0
-        private const val TYPE_BLOG = 1
+        const val TYPE_CANDIDATE = 0
+        const val TYPE_BLOG = 1
     }
 
     private val dataList = mutableListOf<PresenterModel>()
+
+    interface HomeAdapterInterface {
+        fun onItemClick(itemType: Int, itemId: Int)
+    }
+
 
     fun setData(dataList: List<PresenterModel>) {
         this.dataList.apply {
@@ -27,7 +33,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
         }
     }
 
-    class HomeViewHolder(private val binding: ViewBinding, private val context: Context) :
+    inner class HomeViewHolder(private val binding: ViewBinding, private val context: Context) :
         RecyclerView.ViewHolder(binding.root) {
 
         private fun bindCandidate(item: PresenterModel.Candidate) {
@@ -45,8 +51,11 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
                 } else {
                     tvCandidateExpired.visibility = View.GONE
                 }
-            }
 
+                itemView.setOnClickListener {
+                    homeAdapterInterface.onItemClick(TYPE_CANDIDATE, item.id)
+                }
+            }
         }
 
         private fun bindBlog(item: PresenterModel.Blog) {

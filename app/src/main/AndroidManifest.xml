@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StaffinAja">
         <activity
+            android:name=".ui.candidate.CandidateActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true">
             <intent-filter>

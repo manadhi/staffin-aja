@@ -1,9 +1,12 @@
 package com.udhipe.staffinaja.ui.home
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.staffinaja.databinding.ActivityHomeBinding
+import com.udhipe.staffinaja.ui.candidate.CandidateActivity
+import com.udhipe.staffinaja.ui.home.HomeAdapter.HomeAdapterInterface
 
 class HomeActivity : AppCompatActivity() {
 
@@ -19,14 +22,30 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        adapter = HomeAdapter()
+        val homeAdapterInterface = object : HomeAdapterInterface {
+            override fun onItemClick(itemType: Int, itemId: Int) {
+                var intent: Intent? = null
+                if (itemType == HomeAdapter.TYPE_CANDIDATE) {
+                    intent = Intent(this@HomeActivity, CandidateActivity::class.java)
+                    intent.putExtra(CandidateActivity.CANDIDATE_ID, itemId)
+                } else {
+//                    val intent = Intent(this@HomeActivity, CandidateActivity::class.java)
+//                    intent.putExtra(CandidateActivity.CANDIDATE_ID, itemId)
+                }
+
+                if (intent != null) {
+                    startActivity(intent)
+                }
+            }
+        }
+        adapter = HomeAdapter(homeAdapterInterface)
         val linearLayoutManager =
             LinearLayoutManager(this@HomeActivity, LinearLayoutManager.VERTICAL, false)
         binding.rvCandidateBlog.adapter = adapter
         binding.rvCandidateBlog.layoutManager = linearLayoutManager
 
         // dummy data
-        var dummyDataList = mutableListOf<PresenterModel>()
+        val dummyDataList = mutableListOf<PresenterModel>()
 
         dummyDataList.add(
             PresenterModel.Candidate(
