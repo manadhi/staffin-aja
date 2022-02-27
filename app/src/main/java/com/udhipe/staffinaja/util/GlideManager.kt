@@ -1,4 +1,4 @@
-package com.udhipe.staffinaja.ui.util
+package com.udhipe.staffinaja.util
 
 import android.content.Context
 import android.widget.ImageView

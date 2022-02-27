@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBinding
 import com.udhipe.staffinaja.R
 import com.udhipe.staffinaja.databinding.ItemBlogBinding
 import com.udhipe.staffinaja.databinding.ItemCandidateBinding
-import com.udhipe.staffinaja.ui.util.GlideManager
+import com.udhipe.staffinaja.util.GlideManager
 import java.lang.IllegalArgumentException
 
 class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
