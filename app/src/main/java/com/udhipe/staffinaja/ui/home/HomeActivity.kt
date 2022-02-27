@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.staffinaja.databinding.ActivityHomeBinding
+import com.udhipe.staffinaja.ui.blog.BlogActivity
 import com.udhipe.staffinaja.ui.candidate.CandidateActivity
 import com.udhipe.staffinaja.ui.home.HomeAdapter.HomeAdapterInterface
 
@@ -24,18 +25,16 @@ class HomeActivity : AppCompatActivity() {
     private fun setAdapter() {
         val homeAdapterInterface = object : HomeAdapterInterface {
             override fun onItemClick(itemType: Int, itemId: Int) {
-                var intent: Intent? = null
+                val intent: Intent
                 if (itemType == HomeAdapter.TYPE_CANDIDATE) {
                     intent = Intent(this@HomeActivity, CandidateActivity::class.java)
                     intent.putExtra(CandidateActivity.CANDIDATE_ID, itemId)
                 } else {
-//                    val intent = Intent(this@HomeActivity, CandidateActivity::class.java)
-//                    intent.putExtra(CandidateActivity.CANDIDATE_ID, itemId)
+                    intent = Intent(this@HomeActivity, BlogActivity::class.java)
+                    intent.putExtra(BlogActivity.BLOG_ID, itemId)
                 }
 
-                if (intent != null) {
-                    startActivity(intent)
-                }
+                startActivity(intent)
             }
         }
         adapter = HomeAdapter(homeAdapterInterface)

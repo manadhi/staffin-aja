@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.blog.BlogActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/normal_100">
+
+        <TextView
+            android:id="@+id/tv_blog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_blog"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="@dimen/normal_100"
+            android:src="@color/teal_700"
+            app:layout_constraintTop_toBottomOf="@+id/tv_blog_title" />
+
+        <TextView
+            android:id="@+id/tv_blog_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/normal_100"
+            android:text="This is blog content. This is blog content. This is blog content. This is blog content. This is blog content. This is blog content. This is blog content. This is blog content. This is blog content."
+            app:layout_constraintTop_toBottomOf="@+id/img_blog" />
+
+        <TextView
+            android:id="@+id/tv_blog_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_100"
+            android:text="tag: blog, sample"
+            app:layout_constraintTop_toBottomOf="@+id/tv_blog_content" />
+
+        <TextView
+            android:id="@+id/tv_blog_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_100"
+            android:gravity="center"
+            android:text="created by\nJaka Sembung"
+            app:layout_constraintTop_toBottomOf="@+id/tv_blog_tag" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

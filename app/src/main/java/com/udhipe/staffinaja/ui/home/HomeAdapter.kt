@@ -66,6 +66,10 @@ class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
                 GlideManager.loadImageResource(itemView.context, item.image, imgBlog)
                 tvBlogSubTitle.text = item.subTitle
                 tvBlogTag.text = item.tag
+
+                itemView.setOnClickListener {
+                    homeAdapterInterface.onItemClick(TYPE_BLOG, item.id)
+                }
             }
         }
 
