@@ -12,24 +12,26 @@ import com.udhipe.staffinaja.util.CandidateDataMapper
 import kotlinx.coroutines.launch
 
 class CandidateViewModel(private val candidateUseCase: CandidateUseCase) : ViewModel() {
-    private val mContact: MutableLiveData<ContactPresenterModel>? = null
-    private val mAddress: MutableLiveData<AddressPresenterModel>? = null
-    private val mStatus: MutableLiveData<StatusPresenterModel>? = null
+    private var mContact = MutableLiveData<ContactPresenterModel>()
+    private var mAddress = MutableLiveData<AddressPresenterModel>()
+    private var mStatus = MutableLiveData<StatusPresenterModel>()
 
-    val contact: LiveData<ContactPresenterModel>?
+    val contact: LiveData<ContactPresenterModel>
         get() = mContact
 
-    val address: LiveData<AddressPresenterModel>?
+    val address: LiveData<AddressPresenterModel>
         get() = mAddress
 
-    val status: LiveData<StatusPresenterModel>?
+    val status: LiveData<StatusPresenterModel>
         get() = mStatus
 
     fun getContactById(id: Int) {
         viewModelScope.launch {
             try {
                 val contact = candidateUseCase.getContactById(id)
-                mContact?.value = CandidateDataMapper.mapContactDomainModelToPresenter(contact!!)
+                if (contact != null) {
+                    mContact.postValue(CandidateDataMapper.mapContactDomainModelToPresenter(contact))
+                }
             } catch (exception: Exception) {
                 val message = exception.message
                 print(message)
@@ -41,7 +43,9 @@ class CandidateViewModel(private val candidateUseCase: CandidateUseCase) : ViewM
         viewModelScope.launch {
             try {
                 val address = candidateUseCase.getAddressById(id)
-                mAddress?.value = CandidateDataMapper.mapAddressDomainModelToPresenter(address!!)
+                if (address != null) {
+                    mAddress.postValue(CandidateDataMapper.mapAddressDomainModelToPresenter(address))
+                }
             } catch (exception: Exception) {
                 val message = exception.message
                 print(message)
@@ -53,7 +57,9 @@ class CandidateViewModel(private val candidateUseCase: CandidateUseCase) : ViewM
         viewModelScope.launch {
             try {
                 val status = candidateUseCase.getStatusById(id)
-                mStatus?.value = CandidateDataMapper.mapStatusDomainModelToPresenter(status!!)
+                if (status != null) {
+                    mStatus.postValue(CandidateDataMapper.mapStatusDomainModelToPresenter(status))
+                }
             } catch (exception: Exception) {
                 val message = exception.message
                 print(message)

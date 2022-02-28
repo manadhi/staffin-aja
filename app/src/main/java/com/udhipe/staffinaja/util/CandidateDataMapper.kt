@@ -81,7 +81,8 @@ object CandidateDataMapper {
                 image = it.photo,
                 age = DateManipulator.getYear(it.birthday).toInt(),
                 gender = if (it.gender == Gender.MALE) "Male" else "Female",
-                expired = Date().after(it.expired)
+                expired = Date().after(it.expired),
+                birthday = DateManipulator.convertDateToString(it.birthday, "d MMMM yyyy")
             )
             candidateList.add(candidate)
         }

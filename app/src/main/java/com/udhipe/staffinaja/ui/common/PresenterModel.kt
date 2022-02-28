@@ -11,7 +11,8 @@ sealed class PresenterModel {
         val image: String,
         val age: Int,
         val gender: String,
-        val expired: Boolean
+        val expired: Boolean,
+        val birthday: String
     ) : PresenterModel(), Parcelable
 
     @Parcelize
