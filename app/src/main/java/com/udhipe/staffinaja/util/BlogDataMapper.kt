@@ -2,7 +2,7 @@ package com.udhipe.staffinaja.util
 
 import com.udhipe.staffinaja.data.blog.remote.BlogNetworkModel
 import com.udhipe.staffinaja.domain.blog.Blog
-import com.udhipe.staffinaja.ui.home.PresenterModel
+import com.udhipe.staffinaja.ui.common.PresenterModel
 import java.util.*
 import kotlin.collections.ArrayList
 

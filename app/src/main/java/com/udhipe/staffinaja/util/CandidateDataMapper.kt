@@ -4,9 +4,11 @@ import com.udhipe.staffinaja.data.candidate.remote.AddressNetworkModel
 import com.udhipe.staffinaja.data.candidate.remote.CandidateNetworkModel
 import com.udhipe.staffinaja.data.candidate.remote.ContactNetworkModel
 import com.udhipe.staffinaja.data.candidate.remote.StatusNetworkModel
-import com.udhipe.staffinaja.domain.blog.Blog
 import com.udhipe.staffinaja.domain.candidate.*
-import com.udhipe.staffinaja.ui.home.PresenterModel
+import com.udhipe.staffinaja.ui.common.AddressPresenterModel
+import com.udhipe.staffinaja.ui.common.ContactPresenterModel
+import com.udhipe.staffinaja.ui.common.PresenterModel
+import com.udhipe.staffinaja.ui.common.StatusPresenterModel
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -85,4 +87,27 @@ object CandidateDataMapper {
         }
         return candidateList
     }
+
+    fun mapContactDomainModelToPresenter(input: Contact): ContactPresenterModel {
+        return ContactPresenterModel(input.email, input.phone)
+    }
+
+    fun mapAddressDomainModelToPresenter(input: Address): AddressPresenterModel {
+        return AddressPresenterModel(
+            input.address,
+            input.city,
+            input.state,
+            input.zipCode.toString()
+        )
+    }
+
+    fun mapStatusDomainModelToPresenter(input: Status): StatusPresenterModel {
+        return StatusPresenterModel(
+            input.status,
+            input.jobTitle,
+            input.companyName,
+            input.industry
+        )
+    }
+
 }

@@ -15,6 +15,7 @@ import com.udhipe.staffinaja.domain.blog.IBlogRepository
 import com.udhipe.staffinaja.domain.candidate.CandidateInteractor
 import com.udhipe.staffinaja.domain.candidate.CandidateUseCase
 import com.udhipe.staffinaja.domain.candidate.ICandidateRepository
+import com.udhipe.staffinaja.ui.candidate.CandidateViewModel
 import com.udhipe.staffinaja.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
@@ -32,9 +33,11 @@ val appModule = module {
     factory<BlogUseCase> { BlogInteractor(get()) }
 
     viewModel { HomeViewModel(candidateUseCase = get(), blogUseCase = get()) }
+
+    viewModel { CandidateViewModel(candidateUseCase = get()) }
 }
 
-class StaffinAjaApp: Application() {
+class StaffinAjaApp : Application() {
     override fun onCreate() {
         super.onCreate()
 

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.udhipe.staffinaja.R
 import com.udhipe.staffinaja.databinding.ActivityBlogBinding
-import com.udhipe.staffinaja.ui.home.PresenterModel
+import com.udhipe.staffinaja.ui.common.PresenterModel
 import com.udhipe.staffinaja.util.GlideManager
 
 class BlogActivity : AppCompatActivity() {

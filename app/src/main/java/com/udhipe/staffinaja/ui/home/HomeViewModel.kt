@@ -3,6 +3,7 @@ package com.udhipe.staffinaja.ui.home
 import androidx.lifecycle.*
 import com.udhipe.staffinaja.domain.blog.BlogUseCase
 import com.udhipe.staffinaja.domain.candidate.CandidateUseCase
+import com.udhipe.staffinaja.ui.common.PresenterModel
 import com.udhipe.staffinaja.util.BlogDataMapper
 import com.udhipe.staffinaja.util.CandidateDataMapper
 import kotlinx.coroutines.launch

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.staffinaja.databinding.ActivityHomeBinding
 import com.udhipe.staffinaja.ui.blog.BlogActivity
 import com.udhipe.staffinaja.ui.candidate.CandidateActivity
+import com.udhipe.staffinaja.ui.common.PresenterModel
 import com.udhipe.staffinaja.ui.home.HomeAdapter.HomeAdapterInterface
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

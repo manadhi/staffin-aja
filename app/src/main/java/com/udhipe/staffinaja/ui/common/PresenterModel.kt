@@ -1,4 +1,4 @@
-package com.udhipe.staffinaja.ui.home
+package com.udhipe.staffinaja.ui.common
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
