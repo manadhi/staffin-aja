@@ -4,6 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 sealed class PresenterModel {
+    @Parcelize
     data class Candidate(
         val id: Int,
         val name: String,
@@ -11,7 +12,7 @@ sealed class PresenterModel {
         val age: Int,
         val gender: String,
         val expired: Boolean
-    ) : PresenterModel()
+    ) : PresenterModel(), Parcelable
 
     @Parcelize
     data class Blog(

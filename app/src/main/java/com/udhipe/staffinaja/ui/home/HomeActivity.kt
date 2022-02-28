@@ -75,6 +75,7 @@ class HomeActivity : AppCompatActivity() {
                 if (itemType == HomeAdapter.TYPE_CANDIDATE) {
                     intent = Intent(this@HomeActivity, CandidateActivity::class.java)
                     intent.putExtra(CandidateActivity.CANDIDATE_ID, itemId)
+                    intent.putExtra(CandidateActivity.CANDIDATE_DATA, presenterModel as PresenterModel.Candidate)
                 } else {
                     intent = Intent(this@HomeActivity, BlogActivity::class.java)
                     intent.putExtra(BlogActivity.BLOG_ID, itemId)
