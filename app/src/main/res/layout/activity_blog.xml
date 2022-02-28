@@ -47,10 +47,18 @@
             android:id="@+id/tv_blog_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/small_100"
+            android:layout_marginTop="@dimen/normal_150"
             android:gravity="center"
-            android:text="created by\nJaka Sembung"
+            android:text="created by Jaka Sembung"
             app:layout_constraintTop_toBottomOf="@+id/tv_blog_tag" />
+
+        <TextView
+            android:id="@+id/tv_blog_created_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_blog_author"
+            tools:text="at 23 February 2022" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

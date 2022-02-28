@@ -2,4 +2,7 @@
     <string name="app_name">Staffin Aja</string>
 
     <string name="candidate_age">%1$d years old</string>
+    <string name="blog_tag">tag: %1$s</string>
+    <string name="blog_author">by %1$s</string>
+    <string name="blog_created_at">at %1$s</string>
 </resources>

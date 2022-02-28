@@ -33,6 +33,8 @@ object BlogDataMapper {
                 title = it.title,
                 subTitle = it.subTitle,
                 image = it.image,
+                content = it.content,
+                author = it.author,
                 createdDate = DateManipulator.convertDateToString(it.createdDate, "d MMMM yyyy"),
                 tag = it.tag
             )

@@ -65,7 +65,11 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setAdapter() {
         val homeAdapterInterface = object : HomeAdapterInterface {
-            override fun onItemClick(itemType: Int, itemId: Int) {
+            override fun onItemClick(
+                itemType: Int,
+                itemId: Int,
+                presenterModel: PresenterModel
+            ) {
                 val intent: Intent
                 if (itemType == HomeAdapter.TYPE_CANDIDATE) {
                     intent = Intent(this@HomeActivity, CandidateActivity::class.java)
@@ -73,6 +77,7 @@ class HomeActivity : AppCompatActivity() {
                 } else {
                     intent = Intent(this@HomeActivity, BlogActivity::class.java)
                     intent.putExtra(BlogActivity.BLOG_ID, itemId)
+                    intent.putExtra(BlogActivity.BLOG_DATA, presenterModel as PresenterModel.Blog)
                 }
 
                 startActivity(intent)

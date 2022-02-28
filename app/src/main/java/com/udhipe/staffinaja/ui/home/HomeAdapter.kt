@@ -22,7 +22,7 @@ class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
     private val dataList = mutableListOf<PresenterModel>()
 
     interface HomeAdapterInterface {
-        fun onItemClick(itemType: Int, itemId: Int)
+        fun onItemClick(itemType: Int, itemId: Int, presenterModel: PresenterModel)
     }
 
 
@@ -54,7 +54,7 @@ class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
                 }
 
                 itemView.setOnClickListener {
-                    homeAdapterInterface.onItemClick(TYPE_CANDIDATE, item.id)
+                    homeAdapterInterface.onItemClick(TYPE_CANDIDATE, item.id, item)
                 }
             }
         }
@@ -69,7 +69,7 @@ class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
                 tvBlogTag.text = item.tag
 
                 itemView.setOnClickListener {
-                    homeAdapterInterface.onItemClick(TYPE_BLOG, item.id)
+                    homeAdapterInterface.onItemClick(TYPE_BLOG, item.id, item)
                 }
             }
         }
