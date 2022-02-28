@@ -6,7 +6,7 @@ data class Blog(
     val id: Int,
     val title: String,
     val subTitle: String,
-    val cratedDate: Date,
+    val createdDate: Date,
     val image: String,
     val content: String,
     val tag: String,

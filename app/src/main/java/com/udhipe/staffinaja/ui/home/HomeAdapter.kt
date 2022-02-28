@@ -31,6 +31,7 @@ class HomeAdapter(private val homeAdapterInterface: HomeAdapterInterface) :
             clear()
             addAll(dataList)
         }
+        notifyDataSetChanged()
     }
 
     inner class HomeViewHolder(private val binding: ViewBinding, private val context: Context) :

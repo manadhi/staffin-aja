@@ -5,6 +5,6 @@ data class CandidateNetworkModel(
     val name: String,
     val gender: String,
     val photo: String,
-    val birthday: Int,
-    val expired: Int
+    val birthday: Long,
+    val expired: Long
 )

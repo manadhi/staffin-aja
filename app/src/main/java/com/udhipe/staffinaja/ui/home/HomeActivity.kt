@@ -3,16 +3,19 @@ package com.udhipe.staffinaja.ui.home
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.udhipe.staffinaja.databinding.ActivityHomeBinding
 import com.udhipe.staffinaja.ui.blog.BlogActivity
 import com.udhipe.staffinaja.ui.candidate.CandidateActivity
 import com.udhipe.staffinaja.ui.home.HomeAdapter.HomeAdapterInterface
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var adapter: HomeAdapter
+    private val homeViewModel: HomeViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +23,40 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setAdapter()
+        setListener()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setData()
+    }
+
+    private fun setData() {
+        homeViewModel.apply {
+            getCandidateBlogList()
+            combinedCandidateBlog.observe(this@HomeActivity, {
+                if (it.size > 0) {
+                    showData(it)
+                }
+            })
+        }
+    }
+
+    private fun showData(combinedCandidateBlogList: MutableList<PresenterModel>) {
+        adapter.setData(combinedCandidateBlogList)
+    }
+
+    private fun setListener() {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     private fun setAdapter() {
@@ -44,7 +81,7 @@ class HomeActivity : AppCompatActivity() {
         binding.rvCandidateBlog.layoutManager = linearLayoutManager
 
         // dummy data
-        val dummyDataList = mutableListOf<PresenterModel>()
+/*        val dummyDataList = mutableListOf<PresenterModel>()
 
         dummyDataList.add(
             PresenterModel.Candidate(
@@ -130,6 +167,6 @@ class HomeActivity : AppCompatActivity() {
             )
         )
 
-        adapter.setData(dummyDataList)
+        adapter.setData(dummyDataList)*/
     }
 }
