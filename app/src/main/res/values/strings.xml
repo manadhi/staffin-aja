@@ -5,4 +5,5 @@
     <string name="blog_tag">tag: %1$s</string>
     <string name="blog_author">by %1$s</string>
     <string name="blog_created_at">at %1$s</string>
+    <string name="candidate_id">Candidate Number:\n%1$d</string>
 </resources>
