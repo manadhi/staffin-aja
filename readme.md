@@ -20,10 +20,10 @@ I spend about 24 hours or maybe over 30 hours.
 
 **If you had more time, what further improvements or new features would you add?**
 I want complete all feature like randomize item, fixing search behaviour, add loading (use shimmer), 
-try again page if error, check date converter, using coordinator layout for blog page.
+try again page if error, check date converter, and using coordinator layout for blog page
 
 Then I want to implement new feature like splash screen, apps logo, better ui, detect wifi or internet connection problem,
-About and Licenses page, and use local data (use Room)
+About and Licenses page, use local data (use Room), implement unit and ui testing.
 
 **Which parts of your submission are you most proud of? And why? little advice, dont answer whole project, use one what you think it special.**
 I am using several new technique in this project (at least it's new for me). I am using sealed class for implement recyclerview multiple viewtype.
