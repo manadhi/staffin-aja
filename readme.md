@@ -55,7 +55,7 @@ The difficult part is to understand something new. I need some times to understa
 I think other people needs time to understand new konowledge too and that is normal. It is difficult but I am happy that I can understand 
 new knowledge and technique then implement that knowledge in this project.
 
-**How did you find the test overall? If you have any suggestions on how we can improve the test or our API, we'd love to hear them, please elaborate more about this.**
+**How did you find the test overall? If you have any suggestions on how we can improve the test or our API, we'd love to hear them, please elaborate more about this.**  
 The requirement is okay. I am understand the requirements. But the time is limited to 3 days so I must give up several features.
 My suggestions are:
 -   Change the test time from 3 days to 5 days. Some developer will do the test in weekdays. Maybe, They do not have enough time to make their best project.
@@ -80,9 +80,9 @@ My suggestions are:
     
     or the address holding the full address like this:
 
-        address: " Jl Patehan Kidul 34, Jawa Tengah, Yogyakarta, Yogyakarta 55133"
+        address: "Jl Patehan Kidul 34, Yogyakarta, Yogyakarta 55133"
         city: "Yogyakarta"
-        state: "Jawa Tengah"
+        state: "Yogyakarta"
         zip_code: 55133
 
     I assume that current api use street name, so I combine all data to make full address.
