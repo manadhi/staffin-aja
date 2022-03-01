@@ -106,7 +106,23 @@ class CandidateActivity : AppCompatActivity() {
         }
 
         binding.tvCandidatePhone.setOnClickListener {
-            Toast.makeText(this@CandidateActivity, candidatePhone, Toast.LENGTH_SHORT).show()
+            // if user have whatsApp application
+            val phoneNumberFilter1 = candidatePhone.replace("+", "")
+            val phoneNumberFilter2 = phoneNumberFilter1.replace("-", "")
+            val phoneNumber = phoneNumberFilter2.replace(" ", "")
+            val whatsAppIntent = Intent(Intent.ACTION_VIEW)
+            whatsAppIntent.setPackage("com.whatsapp")
+            val url = "https://api.whatsapp.com/send?phone=$phoneNumber&text=Hi, We are MK Company."
+            whatsAppIntent.data = Uri.parse(url)
+
+            if (whatsAppIntent.resolveActivity(packageManager) == null) {
+                // if user do not have whatsApp application
+                val webApiIntent = Intent(Intent.ACTION_VIEW)
+                webApiIntent.data = Uri.parse(url)
+                startActivity(webApiIntent)
+            } else {
+                startActivity(whatsAppIntent)
+            }
         }
     }
 }
